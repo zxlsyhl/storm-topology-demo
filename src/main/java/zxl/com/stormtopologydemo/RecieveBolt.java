@@ -22,6 +22,8 @@ public class RecieveBolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         // 将spout传递过来的tuple值进行转换
         this.collector.emit(new Values(tuple.getStringByField("word") + "!!!"));
+//        collector.ack(tuple);
+//        collector.fail(tuple);
     }
 
     // 声明发送消息的字段名
